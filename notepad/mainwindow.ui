@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Parde</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="rees.qrc">
+    <normaloff>:/images/nodepad.png</normaloff>:/images/nodepad.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
@@ -76,33 +80,56 @@
    <addaction name="menuFormat"/>
    <addaction name="menuHelp"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNew">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/new.png</normaloff>:/images/new.png</iconset>
+   </property>
    <property name="text">
     <string>New</string>
    </property>
   </action>
   <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/open.png</normaloff>:/images/open.png</iconset>
+   </property>
    <property name="text">
     <string>Open</string>
    </property>
   </action>
   <action name="actionSave">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/save.png</normaloff>:/images/save.png</iconset>
+   </property>
    <property name="text">
     <string>Save</string>
    </property>
   </action>
   <action name="actionSave_as">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/save.png</normaloff>:/images/save.png</iconset>
+   </property>
    <property name="text">
     <string>Save as</string>
    </property>
   </action>
   <action name="actionPrint">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/print.png</normaloff>:/images/print.png</iconset>
+   </property>
    <property name="text">
     <string>Print</string>
    </property>
   </action>
   <action name="actionPrint_Preview">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/printprev.png</normaloff>:/images/printprev.png</iconset>
+   </property>
    <property name="text">
     <string>Print Preview</string>
    </property>
@@ -113,6 +140,10 @@
    </property>
   </action>
   <action name="actionExit">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/exit.png</normaloff>:/images/exit.png</iconset>
+   </property>
    <property name="text">
     <string>Exit</string>
    </property>
@@ -143,16 +174,28 @@
    </property>
   </action>
   <action name="actionBold">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/bold.png</normaloff>:/images/bold.png</iconset>
+   </property>
    <property name="text">
     <string>Bold</string>
    </property>
   </action>
   <action name="actionItalic">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/italic.png</normaloff>:/images/italic.png</iconset>
+   </property>
    <property name="text">
     <string>Italic</string>
    </property>
   </action>
   <action name="actionUnderline">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/underline.png</normaloff>:/images/underline.png</iconset>
+   </property>
    <property name="text">
     <string>Underline</string>
    </property>
@@ -163,36 +206,62 @@
    </property>
   </action>
   <action name="actionRight">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/right.png</normaloff>:/images/right.png</iconset>
+   </property>
    <property name="text">
     <string>Right</string>
    </property>
   </action>
   <action name="actionCenter">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/center.png</normaloff>:/images/center.png</iconset>
+   </property>
    <property name="text">
     <string>Center</string>
    </property>
   </action>
   <action name="actionJustify">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/justify.png</normaloff>:/images/justify.png</iconset>
+   </property>
    <property name="text">
     <string>Justify</string>
    </property>
   </action>
   <action name="actionFont">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/font.png</normaloff>:/images/font.png</iconset>
+   </property>
    <property name="text">
     <string>Font</string>
    </property>
   </action>
   <action name="actionColor">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/color.png</normaloff>:/images/color.png</iconset>
+   </property>
    <property name="text">
     <string>Color</string>
    </property>
   </action>
   <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="rees.qrc">
+     <normaloff>:/images/about.png</normaloff>:/images/about.png</iconset>
+   </property>
    <property name="text">
     <string>About</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="rees.qrc"/>
+ </resources>
  <connections/>
 </ui>
