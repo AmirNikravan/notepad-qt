@@ -25,7 +25,8 @@
     <item>
      <widget class="QTextEdit" name="textEdit">
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(208, 208, 208);</string>
+       <string notr="true">background-color: rgb(208, 208, 208);
+color: rgb(0, 0, 0);</string>
       </property>
      </widget>
     </item>
