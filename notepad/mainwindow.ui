@@ -17,10 +17,17 @@
    <iconset resource="rees.qrc">
     <normaloff>:/images/nodepad.png</normaloff>:/images/nodepad.png</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QTextEdit" name="textEdit"/>
+     <widget class="QTextEdit" name="textEdit">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(208, 208, 208);</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -32,6 +39,9 @@
      <width>800</width>
      <height>17</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);</string>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
@@ -95,6 +105,9 @@
    </property>
    <property name="windowTitle">
     <string>toolBar</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(143, 143, 143);</string>
    </property>
    <property name="movable">
     <bool>false</bool>

@@ -24,9 +24,9 @@ void MainWindow::on_actionOpen_triggered()
     QString FileName = QFileDialog::getOpenFileName(this,
                                                     "Open The File");
     CurrentFile = FileName;
-    QFile file=FileName;
+    QFile file(FileName);
     if (!file.open(QIODevice::ReadOnly | QFile::Text)){
-        QMessageBox::warning(this,"WARNING","CAN NOT OPEN FILE"+file.errorString());
+        QMessageBox::warning(this,"WARNING","<font color = 'black'>CAN NOT OPEN FILE</font>"+file.errorString());
         return;
     }
     setWindowTitle(FileName);
