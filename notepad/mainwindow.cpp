@@ -12,3 +12,28 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_actionNew_triggered()
+{
+    ui->textEdit->setText(QString());
+}
+
+
+void MainWindow::on_actionOpen_triggered()
+{
+    QString FileName = QFileDialog::getOpenFileName(this,
+                                                    "Open The File");
+    CurrentFile = FileName;
+    QFile file=FileName;
+    if (!file.open(QIODevice::ReadOnly | QFile::Text)){
+        QMessageBox::warning(this,"WARNING","CAN NOT OPEN FILE"+file.errorString());
+        return;
+    }
+    setWindowTitle(FileName);
+    QTextStream in (&file);
+    QString text = in.readAll();
+    ui->textEdit->setText(text);
+    file.close();
+
+}
+
