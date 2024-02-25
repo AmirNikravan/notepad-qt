@@ -26,15 +26,16 @@ void MainWindow::on_actionOpen_triggered()
                                                     "Open The File");
     CurrentFile = FileName;
     QFile file(FileName);
-    if (!file.open(QIODevice::ReadOnly | QFile::Text)){
-        QMessageBox::warning(this,"WARNING","<font color = 'black'>CAN NOT OPEN FILE</font>"+file.errorString());
-        return;
-    }
+    // if (!file.open(QIODevice::ReadOnly | QFile::Text)){
+    //     QMessageBox::warning(this,"WARNING","<font color = 'black'>CAN NOT OPEN FILE</font>"+file.errorString());
+    //     return;
+    // }
     setWindowTitle(FileName);
     QTextStream in (&file);
     QString text = in.readAll();
     ui->textEdit->setText(text);
     file.close();
+
 
 }
 
@@ -43,7 +44,7 @@ void MainWindow::on_actionSave_triiggered()
     QString FileName;
     if(CurrentFile.isEmpty())
     {
-        FileName= QFileDialog::getOpenFileName(this,"Save File");
+        FileName= QFileDialog::getSaveFileName(this,"Save File");
         CurrentFile = FileName;
     }
     else{
@@ -67,14 +68,9 @@ void MainWindow::on_actionSave_triiggered()
 void MainWindow::on_actionSave_as_triggered()
 {
     QString FileName;
-    if(CurrentFile.isEmpty())
-    {
-        FileName= QFileDialog::getOpenFileName(this,"Save File");
+        FileName= QFileDialog::getSaveFileName(this,"Save File");
         CurrentFile = FileName;
-    }
-    else{
-        FileName = CurrentFile;
-    }
+
     QFile file(FileName);
     if (!file.open(QIODevice::WriteOnly | QFile::Text)){
         QMessageBox an;
