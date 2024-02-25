@@ -1,9 +1,12 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QPrinter>
 #include <QMainWindow>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QPrintDialog>
+#include <QPrintPreviewDialog>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -27,6 +30,11 @@ private slots:
 
     void on_actionSave_as_triggered();
 
+    void on_actionPrint_triggered();
+
+    void on_actionPrintPreview_triggered();
+
+    void PrintPreview(QPrinter *);
 private:
     Ui::MainWindow *ui;
     QString CurrentFile;

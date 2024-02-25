@@ -7,7 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     connect(ui->actionSave,SIGNAL(triggered(bool)),this,SLOT(on_actionSave_triiggered()));
-
+    connect(ui->actionPrint,&QAction::triggered,this,&MainWindow::on_actionPrint_triggered);
+    connect(ui->actionPrint_Preview,&QAction::triggered,this,&MainWindow::on_actionPrintPreview_triggered);
 }
 
 MainWindow::~MainWindow()
@@ -95,5 +96,30 @@ void MainWindow::on_actionSave_as_triggered()
     QString text = ui->textEdit->toPlainText();
     out << text;
     file.close();
+}
+
+void MainWindow::on_actionPrint_triggered()
+{
+    QPrinter printer;
+    QPrintDialog dialog(&printer,this);
+    if(dialog.exec() == QDialog::Rejected){
+        return;
+
+    }
+    ui->textEdit->print(&printer);
+}
+
+void MainWindow::on_actionPrintPreview_triggered()
+{
+    QPrinter printer(QPrinter::HighResolution);
+    QPrintPreviewDialog preview(&printer,this);
+    preview.setWindowFlags(Qt::Window);
+    connect(&preview,SIGNAL(paintRequested(QPrinter*)),SLOT(PrintPreview(QPrinter *)));
+    preview.exec();
+}
+
+void MainWindow::PrintPreview(QPrinter *printer)
+{
+    ui->textEdit->print(printer);
 }
 
