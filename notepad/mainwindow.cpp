@@ -31,6 +31,7 @@ void MainWindow::on_actionOpen_triggered()
 
     if (!file.open(QIODevice::ReadOnly | QFile::Text)){
         open_error.setText("WARNING OPENING FILE");
+        open_error.setIcon(QMessageBox::Warning);
         open_error.setInformativeText("NO File opened.");
         open_error.setStyleSheet("color:black;background-color : #C1B2B2");
         open_error.exec();
