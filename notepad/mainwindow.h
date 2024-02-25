@@ -7,6 +7,7 @@
 #include <QMessageBox>
 #include <QPrintDialog>
 #include <QPrintPreviewDialog>
+#include <QApplication>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -35,6 +36,8 @@ private slots:
     void on_actionPrintPreview_triggered();
 
     void PrintPreview(QPrinter *);
+    void on_actionExport_PDF_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString CurrentFile;
