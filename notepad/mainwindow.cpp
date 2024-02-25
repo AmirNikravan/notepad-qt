@@ -56,10 +56,13 @@ void MainWindow::on_actionSave_triiggered()
     }
     QFile file(FileName);
     if (!file.open(QIODevice::WriteOnly | QFile::Text)){
-        QMessageBox an;
-        an.setStyleSheet("QPushButton{ color : red; }");
-        an.warning(this,"WARNING","<font color = 'blak'>CAN NOT SAVE FILE</font>"+file.errorString());
-        // QMessageBox::warning(this,"WARNING","<font color = 'blak'>CAN NOT SAVE FILE</font>"+file.errorString());
+        QMessageBox save_file;
+        save_file.setText("WARNING SAVING FILE");
+        save_file.setWindowTitle(CurrentFile);
+        save_file.setIcon(QMessageBox::Warning);
+        save_file.setInformativeText("NO File SAVED.");
+        save_file.setStyleSheet("color:black;background-color : #C1B2B2");
+        save_file.exec();
         return;
     }
     QTextStream out(&file);
@@ -77,10 +80,13 @@ void MainWindow::on_actionSave_as_triggered()
 
     QFile file(FileName);
     if (!file.open(QIODevice::WriteOnly | QFile::Text)){
-        QMessageBox an;
-        an.setStyleSheet("QPushButton{ color : red; }");
-        an.warning(this,"WARNING","<font color = 'blak'>CAN NOT SAVE FILE</font>"+file.errorString());
-        // QMessageBox::warning(this,"WARNING","<font color = 'blak'>CAN NOT SAVE FILE</font>"+file.errorString());
+        QMessageBox save_file;
+        save_file.setText("WARNING SAVING FILE");
+        save_file.setWindowTitle(CurrentFile);
+        save_file.setIcon(QMessageBox::Warning);
+        save_file.setInformativeText("NO File SAVED.");
+        save_file.setStyleSheet("color:black;background-color : #C1B2B2");
+        save_file.exec();
         return;
     }
     CurrentFile = FileName;
