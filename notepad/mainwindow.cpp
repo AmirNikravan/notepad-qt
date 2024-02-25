@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     connect(ui->actionSave,SIGNAL(triggered(bool)),this,SLOT(on_actionSave_triiggered()));
+
 }
 
 MainWindow::~MainWindow()
@@ -26,16 +27,19 @@ void MainWindow::on_actionOpen_triggered()
                                                     "Open The File");
     CurrentFile = FileName;
     QFile file(FileName);
-    // if (!file.open(QIODevice::ReadOnly | QFile::Text)){
-    //     QMessageBox::warning(this,"WARNING","<font color = 'black'>CAN NOT OPEN FILE</font>"+file.errorString());
-    //     return;
-    // }
+    QMessageBox open_error;
+
+    if (!file.open(QIODevice::ReadOnly | QFile::Text)){
+        open_error.setText("WARNING OPENING FILE");
+        open_error.setInformativeText("NO File opened.");
+        open_error.setStyleSheet("color:black;background-color : #C1B2B2");
+        open_error.exec();
+    }
     setWindowTitle(FileName);
     QTextStream in (&file);
     QString text = in.readAll();
     ui->textEdit->setText(text);
     file.close();
-
 
 }
 
