@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->actionPrint,&QAction::triggered,this,&MainWindow::on_actionPrint_triggered);
     connect(ui->actionPrint_Preview,&QAction::triggered,this,&MainWindow::on_actionPrintPreview_triggered);
     connect(ui->actionExit,&QAction::triggered,this,&QApplication::quit);
+    connect(ui->actionExport_PDF,&QAction::triggered,this,&MainWindow::on_actionExport_PDF_triggered);
 }
 
 MainWindow::~MainWindow()
@@ -127,6 +128,12 @@ void MainWindow::PrintPreview(QPrinter *printer)
 
 void MainWindow::on_actionExport_PDF_triggered()
 {
-
+    QString filename = QFileDialog::getSaveFileName(this,"export pdf");
+    if (filename != ' '){
+        QPrinter printer(QPrinter::PrinterResolution);
+        printer.setOutputFormat(QPrinter::PdfFormat);
+        printer.setOutputFileName(filename);
+        ui->textEdit->document()->print(&printer);
+    }
 }
 
