@@ -48,6 +48,12 @@ private slots:
 
     void on_actionPaste_triggered();
 
+    void on_actionBold_triggered();
+
+    void on_actionItalic_triggered();
+
+    void on_actionUnderline_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString CurrentFile;

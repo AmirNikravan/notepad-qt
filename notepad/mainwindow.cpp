@@ -167,3 +167,26 @@ void MainWindow::on_actionPaste_triggered()
     ui->textEdit->paste();
 }
 
+
+void MainWindow::on_actionBold_triggered()
+{
+    QFont font;
+    font.setBold(true);
+    ui->textEdit->setFont(font);
+}
+
+
+void MainWindow::on_actionItalic_triggered()
+{
+    QFont font;
+    font.setItalic(true);
+    ui->textEdit->setFont(font);
+
+}
+
+
+void MainWindow::on_actionUnderline_triggered()
+{
+    ui->textEdit->setFontUnderline(true);
+}
+
