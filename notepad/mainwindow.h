@@ -38,6 +38,16 @@ private slots:
     void PrintPreview(QPrinter *);
     void on_actionExport_PDF_triggered();
 
+    void on_actionUndo_triggered();
+
+    void on_actionRedo_triggered();
+
+    void on_actionCut_triggered();
+
+    void on_actionCopy_triggered();
+
+    void on_actionPaste_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString CurrentFile;
