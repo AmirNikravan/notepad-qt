@@ -233,7 +233,10 @@ void MainWindow::on_actionColor_triggered()
 
 void MainWindow::on_actionAbout_triggered()
 {
-
-    QMessageBox::about(this,"About","This application is created by Amir Nikravan");
+    QMessageBox msg;
+    msg.setStyleSheet("color : black;background-color : #787878;");
+    msg.setTextFormat(Qt::RichText);
+    msg.setText("Made by <a href=\"https://www.linkedin.com/in/amir-hossein-nikravan-92877b232/\"; style= \"color: black; \">Amir Hossein Nikravan </a>");
+    msg.exec();
 }
 
