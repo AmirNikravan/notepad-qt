@@ -137,3 +137,15 @@ void MainWindow::on_actionExport_PDF_triggered()
     }
 }
 
+
+void MainWindow::on_actionUndo_triggered()
+{
+    ui->textEdit->undo();
+}
+
+
+void MainWindow::on_actionRedo_triggered()
+{
+    ui->textEdit->redo();
+}
+
