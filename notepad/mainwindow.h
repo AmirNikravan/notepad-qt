@@ -8,6 +8,8 @@
 #include <QPrintDialog>
 #include <QPrintPreviewDialog>
 #include <QApplication>
+#include <QFontDialog>
+#include <QColorDialog>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -61,6 +63,12 @@ private slots:
     void on_actionCenter_triggered();
 
     void on_actionJustify_triggered();
+
+    void on_actionFont_triggered();
+
+    void on_actionColor_triggered();
+
+    void on_actionAbout_triggered();
 
 private:
     Ui::MainWindow *ui;

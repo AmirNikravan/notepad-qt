@@ -214,3 +214,26 @@ void MainWindow::on_actionJustify_triggered()
     ui->textEdit->setAlignment(Qt::AlignmentFlag::AlignJustify);
 }
 
+
+void MainWindow::on_actionFont_triggered()
+{
+    bool ok;
+    QFont font= QFontDialog::getFont(&ok,this);
+    if(ok)
+        ui->textEdit->setFont(font);
+}
+
+
+void MainWindow::on_actionColor_triggered()
+{
+    QColor color = QColorDialog::getColor();
+    ui->textEdit->setTextColor(color);
+}
+
+
+void MainWindow::on_actionAbout_triggered()
+{
+
+    QMessageBox::about(this,"About","This application is created by Amir Nikravan");
+}
+
