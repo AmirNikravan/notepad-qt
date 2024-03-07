@@ -54,6 +54,14 @@ private slots:
 
     void on_actionUnderline_triggered();
 
+    void on_actionLeft_triggered();
+
+    void on_actionRight_triggered();
+
+    void on_actionCenter_triggered();
+
+    void on_actionJustify_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString CurrentFile;
